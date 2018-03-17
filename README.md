@@ -24,6 +24,8 @@ Lua脚本可以很容易的被C/C++ 代码调用，也可以反过来调用C/C++
 - [08- Lua脚本学习--文件操作](chapter8.md)
 - [09- Lua脚本学习--元表](chapter9.md)
 - [10- Lua脚本学习--面向对象编程](chapter10.md)
+- [11- Lua脚本学习--Redis里使用Lua](chapter11.md)
+- [12- Lua脚本学习--Ngx_lua](chapter12.md)
 
 
 
