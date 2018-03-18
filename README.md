@@ -3,7 +3,7 @@
 Lua脚本学习
 ===========
 
-![lua](https://www.lua.org/images/lua25.gif)
+![lua](images/lua25.jpg)
 
 Lua 是一个小巧的脚本语言。  
 
