@@ -187,6 +187,47 @@ a["key"] = "value"
 
 ## function
 
+在 Lua 中，`函数` 也是一种数据类型，函数可以存储在变量中，可以通过参数传递给其他函数，还可以作为其他函数的返回值。
+
+``` lua
+function maxNumber(a, b)
+	if a > b then
+		return a
+	else
+		return b
+	end
+end
+
+local testFunc = maxNumber
+
+print(testFunc(10,100));
+```
+输出：  
+```
+100  
+```
+
+有名函数的定义本质上是匿名函数对变量的赋值：
+
+``` lua
+function foo()
+end
+```
+
+等价于：
+
+``` lua
+foo = function ()
+end
+```
+
 ## userdata
 
+userdata 是一种用户自定义数据，用于表示一种由应用程序或 C/C++ 语言库所创建的类型，可以将任意 C/C++ 的任意数据类型的数据（通常是 struct 和 指针）存储到 Lua 变量中调用。
+
+
 ## thread
+
+在 Lua 里，最主要的线程是协同程序（coroutine）。它跟线程（thread）差不多，拥有自己独立的栈、局部变量和指令指针，可以跟其他协同程序共享全局变量和其他大部分东西。
+线程跟协程的区别：线程可以同时多个运行，而协程任意时刻只能运行一个，并且处于运行状态的协程只有被挂起（suspend）时才会暂停。
+
