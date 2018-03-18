@@ -1,0 +1,7 @@
+dir: ./
+output: dist
+site: Lua脚本学习
+theme: oceandeep
+customization: false
+themeDir: loppo-theme
+direction: ltr

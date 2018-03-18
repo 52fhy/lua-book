@@ -13,7 +13,7 @@ Lua 提供的控制语句部分特征类似Shell和Python：
 - 语句都以`end`结束
 - `if`后面都有`then`
 - 没有花括号`{}`
-- 循环结构`while`、`for`表达式后面都有关键字`do`
+- 循环结构`while`、`for`表达式后面都有关键字`do`; python里是用的`:`
 
 ##  if-else
 
