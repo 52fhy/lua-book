@@ -6,7 +6,7 @@
 
 ---
 
-Lua 语言提供的控制结构有 ` if-else`，`while`，`repeat`，`for`，并提供 `break`、`return` 关键字来满足更丰富的需求。不支持`switch`、`continue`。 
+Lua 语言提供的控制结构有 `if-else`，`while`，`repeat`，`for`，并提供 `break`、`return` 关键字来满足更丰富的需求。不支持`switch`、`continue`。 
 
 Lua 提供的控制语句部分特征类似Shell和Python：
 
