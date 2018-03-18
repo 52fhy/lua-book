@@ -6,7 +6,7 @@
 
 Lua中有8个基本类型分别为：nil、boolean、number、string、table、function、userdata、thread。  
 
-函数 type 能够返回一个值或一个变量所属的类型：
+函数 `type` 能够返回一个值或一个变量所属的类型：
 ``` lua
 print(type("hello world")) -->output:string
 print(type(print)) -->output:function
@@ -17,7 +17,7 @@ print(type(nil)) -->output:nil
 
 ## nil
 
-只有值nil属于该类，表示一个无效值（在条件表达式中相当于false）。一个变量在第一次赋值前的默认值是 nil，将
+只有值`nil`属于该类，表示一个无效值（在条件表达式中相当于false）。一个变量在第一次赋值前的默认值是 `nil`，将
 nil 赋予给一个全局变量就等同于删除它。
 
 ``` lua
@@ -92,7 +92,7 @@ this is string2
 ```
 可以看出单引号里面转义字符也生效。说明Lua不区分单引号、双引号。    
 
-也可以用 2 个方括号 "[[]]" 来表示"一块"字符串:
+也可以用 2 个方括号 "[[]]" 来表示"一块"字符串。我们把两个正的方括号（即`[[`）间插入 n 个等号定义为第 n 级正长括号:
 ``` lua
 string3 = [[this is string3\n]] -- 0 级正的长括号
 string4 = [=[this is string4\n]=] -- 1 级正的长括号
@@ -133,10 +133,57 @@ this is string3\nthis is string4\n
 使用 `#` 来计算字符串的长度，放在字符串前面，如下实例：
 ``` lua
 local string8 = "this is string8"
-print(#string8)
+print(#string8) -- 输出：15
 ```
 
 ## table
+
+Table 类型实现了一种抽象的“关联数组”。“关联数组”是一种具有特殊索引方式的数组，索引通常是`string`或者`number`类型，但也可以是除 `nil` 以外的任意类型的值。  
+
+PHP程序员对此会很熟悉，因为PHP里的数组(`array`)和Table非常类似。示例：
+
+``` lua
+local tmp = {
+	name = "lua",
+	-- "name2" = "lua2", -- 错误的表示
+	["name3"] = "lua",
+	year = 2018,
+	pi = 3.14159,
+	lang = {"c", "java", "lua"},
+	100,  -- 相当于[1] = 100，此时索引为数字。lua里数字索引是从1开始的，不是0
+	[10] = 11, -- 相当于[10] = 11，此时索引为数字
+}
+
+print(tmp.name)
+print(tmp["name3"])
+print(tmp.year)
+print(tmp.pi)
+print(tmp.lang[1])
+print(tmp[1])
+print(tmp[10])
+```
+输出：
+```
+lua
+lua
+2018
+3.14159
+c
+100
+11
+```
+
+在 Lua 里表的默认初始索引一般以 1 开始，而不是0，这点需要注意。   
+
+也可以先创建一个空表，再添加数据：
+``` lua
+a = {}
+a["key"] = "value"
+```
+
+
+在内部实现上，table 通常实现为一个哈希表、一个数组、或者两者的混合。具体的实现为何种形式，动态依赖于具体的 table 的键分布特点。
+
 
 ## function
 
