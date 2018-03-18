@@ -122,3 +122,98 @@ end
 ```
 
 `i`是数组索引值，`v`是对应索引的数组元素值。`ipairs`是`Lua`提供的一个迭代器函数，用来迭代数组。
+
+示例：
+``` lua
+days = {
+	"Monday",
+	"Tuesday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+}
+
+for k,v in ipairs(days) do
+	print(k,v)
+end
+```
+输出：
+```
+1       Monday
+2       Tuesday
+3       Wednesday
+4       Thursday
+5       Friday
+```
+
+>ipairs以及pairs 的不同:
+pairs可以遍历表中所有的key，并且除了迭代器本身以及遍历表本身还可以返回nil; 但是ipairs则不能返回nil，只能返回数字0，如果值遇到nil则直接跳出循环退出。
+
+示例：
+``` lua
+local tabFiles = {  
+	[1] = "test1",  
+	[6] = "test2",  
+	[4] = "test3"  
+}  
+
+for k,v in ipairs(tabFiles) do
+	print(k,v)
+end
+```
+输出：
+```
+1       test1
+``` 
+`ipairs`遍历时，当key=2时候value就是nil，所以直接跳出循环。    
+
+如果换成`pairs`，则全部输出:
+```
+1       test1
+6       test2
+4       test3
+```
+
+>值得一提的是，在 LuaJIT 2.1 中， `ipairs()` 内建函数是可以被 `JIT` 编译的，而 `pairs()` 则只能被解释执行。
+
+
+## break
+语句 `break` 用来终止 `while` 、 repeat 和 for 三种循环的执行，并跳出当前循环体， 继续执行当前循环之后的语句。
+
+## return
+
+`return` 主要用于从函数中返回结果，或者用于简单的结束一个函数的执行。  
+
+需要注意的是： return 只能写在语句块的最后，一旦执行了 return 语句，该语句之后的所有语句都不会再执行。  
+
+若要写在函数中间，则只能写在一个显式的语句块内，否则会报错：
+``` lua
+function test1(x, y)
+	return x+y;
+	-- print(x+y)
+	-- 后面的print如果不注释，会报错
+end
+
+function test2(x, y)
+	if x > y then
+		return x
+	else
+		return y
+	end
+	print("end") -- 此处的print不注释不会报错，因为return只出现在前面显式的语句块
+end
+
+function test3(x, y)
+	print(x+y)
+	do return end
+	print(x) -- 此处的print不注释不会报错，因为return由do...end语句块包含。这一行语句永远不会执行到
+end
+
+test1(10,11)
+test2(10,11)
+test3(10,11)
+```
+
+所以，有时候为了调试方便，我们可以想在某个函数的中间提前 return ，以进行控制流的短路，此时我们可以将 return 放在一个 `do...end` 代码块中。
+
+
