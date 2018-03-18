@@ -3,6 +3,8 @@
 Lua脚本学习
 ===========
 
+![lua](https://www.lua.org/images/lua25.gif)
+
 Lua 是一个小巧的脚本语言。  
 
 是巴西里约热内卢天主教大学（Pontifical Catholic University of Rio de Janeiro）里的一个研究小组，由Roberto Ierusalimschy、Waldemar Celes 和 Luiz Henrique de Figueiredo所组成并于1993年开发。其设计目的是为了嵌入应用程序中，从而为应用程序提供灵活的扩展和定制功能。   
