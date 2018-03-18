@@ -59,3 +59,11 @@ local function swap(a, b)
 	return b, a -- 按相反顺序返回变量的值
 end
 print(swap(1,2))
+
+-- 虚变量测试
+local function test_var()
+	return 1,2,3
+end
+
+local x,_,y = test_var()
+print(x,y)
