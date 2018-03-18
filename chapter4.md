@@ -88,7 +88,7 @@ for有两种结构：数字 for（numeric for） 和范型 for（generic for）�
 ### for 数字型
 
 数字型 for 的语法如下：
-```
+``` lua
 for var = begin, finish, step do
 	--body
 end
@@ -114,8 +114,8 @@ print(sum) -- 5050
 ### for 泛型
 
 Lua 编程语言中泛型for循环语法格式:
-```
---打印数组a的所有值  
+``` lua
+-- 打印数组a的所有值  
 for i,v in ipairs(a) do 
 	print(v) 
 end  

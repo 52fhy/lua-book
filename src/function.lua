@@ -34,3 +34,28 @@ end
 test1(10,11)
 test2(10,11)
 test3(10,11)
+
+
+--- 动态函数
+
+function do_action(func, ...)
+	local args = {...} or {} -- 防止为nil
+	func(unpack(args, 1, table.maxn(args)))
+end
+
+local function add(x, y)
+	print(x+y)
+end
+
+local function add2(x, y, z)
+	print(x+y+z)
+end
+
+do_action(add, 1, 1)
+do_action(add2, 1, 1, 1)
+
+-- 定义函数 swap，实现两个变量交换值
+local function swap(a, b) 
+	return b, a -- 按相反顺序返回变量的值
+end
+print(swap(1,2))
