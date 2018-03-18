@@ -2,6 +2,8 @@
 
 [TOC]
 
+@date: 2018-3-18
+
 ---
 
 Lua中有8个基本类型分别为：nil、boolean、number、string、table、function、userdata、thread。  
