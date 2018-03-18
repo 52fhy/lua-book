@@ -13,6 +13,7 @@ Lua 提供的控制语句部分特征类似Shell和Python：
 - 语句都以`end`结束
 - `if`后面都有`then`
 - 没有花括号`{}`
+- 循环结构`while`、`for`表达式后面都有关键字`do`
 
 ##  if-else
 
@@ -53,9 +54,7 @@ end
 
 ## while
 
-Lua 跟其他常见语言一样，提供了 `while` 控制结构，语法上也没有什么特别的。但是没有提供 `do-while` 型的控制结构，但是提供了功能相当的 `repeat`。
-
-`while`表达式后面有关键字`do`。  
+Lua 跟其他常见语言一样，提供了 `while` 控制结构，语法上也没有什么特别的。但是没有提供 `do-while` 型的控制结构，但是提供了功能相当的 `repeat`。 
 
 ``` lua
 sum = 0
@@ -117,8 +116,8 @@ print(sum) -- 5050
 Lua 编程语言中泛型for循环语法格式:
 ```
 --打印数组a的所有值  
-for i,v in ipairs(a) 
-    do print(v) 
+for i,v in ipairs(a) do 
+	print(v) 
 end  
 ```
 
