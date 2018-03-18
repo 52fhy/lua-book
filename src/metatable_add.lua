@@ -18,4 +18,4 @@ setmetatable(set1, {
 })
 
 local set3 = set1 + set2
-for k,v in pairs(set3) do print(v) end
+for k,v in pairs(set3) do print(v) end 

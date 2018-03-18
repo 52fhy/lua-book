@@ -88,7 +88,7 @@ print(x,y) -- 1	3
 ``` lua
 function do_action(func, ...)
 	local args = {...} or {} -- 防止为nil
-	func(unpack(args, 1, table.maxn(args)))
+	func(unpack(args, 1, table.maxn(args))) -- 如果实参中确定没有nil空洞（nil值被夹在非空值之间），可以只写第一个参数 
 end
 
 local function add(x, y)
