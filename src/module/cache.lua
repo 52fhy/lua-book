@@ -16,7 +16,7 @@ _M.getall = function(self)
 	return self.mt
 end
 
-_M.new = function(self, key)
+_M.new = function(self)
 	return setmetatable({}, {__index = _M })
 end
 
