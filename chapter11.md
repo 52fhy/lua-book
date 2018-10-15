@@ -12,7 +12,7 @@
 ### 基本使用
 
 命令格式：
-```
+``` bash
 EVAL script numkeys key [key ...] arg [arg ...]
 ```
 
@@ -24,7 +24,7 @@ EVAL script numkeys key [key ...] arg [arg ...]
 - `arg [arg ...]`，参数，在lua脚本中通过`ARGV[1]`, `ARGV[2]`获取。
 
 简单实例：
-```
+``` bash
 127.0.0.1:6379> eval "return ARGV[1]" 0 100 
 "100"
 127.0.0.1:6379> eval "return {ARGV[1],ARGV[2]}" 0 100 101
@@ -52,7 +52,7 @@ EVAL script numkeys key [key ...] arg [arg ...]
 ### 命令行里使用
 
 如果直接使用`redis-cli`命令，格式会有点不一样：
-```
+``` bash
 redis-cli --eval lua_file key1 key2 , arg1 arg2 arg3
 ```
 
@@ -64,7 +64,7 @@ redis-cli --eval lua_file key1 key2 , arg1 arg2 arg3
 示例：
 
 incrbymul.lua
-```
+``` lua
 local num = redis.call('GET', KEYS[1]);  
 
 if not num then
@@ -77,7 +77,7 @@ end
 ```
 
 命令行运行：
-```
+``` bash
 $ redis-cli --eval incrbymul.lua lua:incrbymul , 8
 (integer) 0
 $ redis-cli incr lua:incrbymul 
@@ -120,7 +120,7 @@ echo $ret;
 ```
 
 运行：
-```
+``` bash
 $ redis-cli set lua:incrbymul 0
 OK
 $ redis-cli incr lua:incrbymul
@@ -132,7 +132,7 @@ $ php incrbymul.php
 ```
 
 eval原型：
-```
+``` c
 Redis::eval(string script, [array keys, long num_keys])
 ```
 eval函数的第3个参数为KEYS个数，phpredis依据此值将KEYS和ARGV做区分。
