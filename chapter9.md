@@ -85,7 +85,7 @@ for k,v in pairs(set3) do print(v) end
 
 该方法实现了在表中查找键不存在时转而在元表中查找该键的功能。有两种写法：  
 
-第一种是给__index 元方法一个函数：
+第一种是给 `__index` 元方法一个函数：
 ``` lua
 local mytable = setmetatable({}, {
 	__index = function(self, key)
@@ -95,7 +95,7 @@ local mytable = setmetatable({}, {
 print(mytable.key1) -- __index 
 ```
 
-另一种方法是__index 元方法一个表：
+另一种方法是给 `__index` 元方法一个表：
 ``` lua
 local _M = {
 	add = function(x,y) return x+y end,
