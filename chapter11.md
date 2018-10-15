@@ -1,3 +1,7 @@
+
+@date: 2018-10-15
+---
+
 版本：自2.6.0起可用。
 时间复杂度：取决于执行的脚本。
 
@@ -139,11 +143,14 @@ eval函数的第3个参数为KEYS个数，phpredis依据此值将KEYS和ARGV做�
 
 
 ## 参考
-1、在redis中使用lua脚本让你的灵活性提高5个逼格 - 一线码农 - 博客园
-https://www.cnblogs.com/huangxincheng/p/6230129.html
-2、Redis执行Lua脚本示例 - yanghuahui - 博客园
-https://www.cnblogs.com/yanghuahui/p/3697996.html
-3、EVAL - Redis
-https://redis.io/commands/eval
-4、phpredis 执行LUA脚本的例子 - jingtan的专栏 - CSDN博客
-https://blog.csdn.net/jingtan/article/details/53392309
+
+1、在redis中使用lua脚本让你的灵活性提高5个逼格 - 一线码农 - 博客园  
+https://www.cnblogs.com/huangxincheng/p/6230129.html  
+2、Redis执行Lua脚本示例 - yanghuahui - 博客园  
+https://www.cnblogs.com/yanghuahui/p/3697996.html  
+3、EVAL - Redis  
+https://redis.io/commands/eval  
+4、phpredis 执行LUA脚本的例子 - jingtan的专栏 - CSDN博客  
+https://blog.csdn.net/jingtan/article/details/53392309  
+
+
