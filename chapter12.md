@@ -13,7 +13,7 @@ ngx_lua 指的是 [`lua-nginx-module`](https://github.com/openresty/lua-nginx-mo
 官网：https://openresty.org/cn/  
 官方文档：https://github.com/openresty/lua-nginx-module  
 
-## ## Hello World 
+## Hello World 
 
 ### OpenResty 安装
 
