@@ -24,11 +24,11 @@ Lua I/O 库用于读取和处理文件。分为简单模式（和C一样）、�
 - `io.output(file)`: 设置默认输出文件为file
 - `io.write(content)`: 在文件最后一行添加content内容
 - `io.read()`:  读取文件的一行。  
-参数可以是下表中的一个：
+参数可以是下列中的一个：
 ``` lua
 "*n"	读取一个数字并返回它。例：file.read("*n")
 "*a"	从当前位置读取整个文件。例：file.read("*a")
-"*l"（默认）	读取下一行，在文件尾 (EOF) 处返回 nil。例：file.read("*l")
+"*l"   （默认）读取下一行，在文件尾 (EOF) 处返回 nil。例：file.read("*l")
 number	返回一个指定字符个数的字符串，或在 EOF 时返回 nil。例：file.read(5)
 ```
 - `io.close(file)`: 关闭打开的文件file
