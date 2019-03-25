@@ -6,7 +6,7 @@
 
 ---
 
-Lua I/O 库用于读取和处理文件。分为简单模式（和C一样）、完全模式。
+Lua I/O 库用于读取和处理文件。分为简单模式、完全模式。
 
 - 简单模式（simple model）
 拥有一个当前输入文件和一个当前输出文件，并且提供针对这些文件相关的操作。
@@ -132,3 +132,7 @@ file:close()  -- 关闭打开的文件
 $ luajit src/file_read.lua
 hahah
 ```
+
+## 参考
+1、文件操作 · OpenResty最佳实践  
+https://moonbingbing.gitbooks.io/openresty-best-practices/content/lua/file.html  
