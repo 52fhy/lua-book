@@ -10,8 +10,8 @@ local tmp = {
 	[10] = 11, -- 相当于[10] = 11，此时索引为数字
 }
 
-print(tmp.name)
-print(tmp["name3"])
+print(tmp.name)  -- 等同于 print(tmp["name"])
+print(tmp["name3"])  -- 等同于 print(tmp.name3)
 print(tmp.year)
 print(tmp.pi)
 print(tmp.lang[1])
