@@ -23,7 +23,7 @@ Lua I/O 库用于读取和处理文件。分为简单模式（和C一样）、�
 - `io.input(file)`: 设置默认输入文件为file
 - `io.output(file)`: 设置默认输出文件为file
 - `io.write(content)`: 在文件最后一行添加content内容
-- `io.read()`:  读取文件的一行
+- `io.read()`:  读取文件的一行。  
 参数可以是下表中的一个：
 ``` lua
 "*n"	读取一个数字并返回它。例：file.read("*n")
@@ -102,7 +102,7 @@ hahah
 - `file:write(content)`: 在文件最后一行添加content内容
 - `file:read()`:  读取文件的一行
 - `file:close()`: 关闭打开的文件
-- `file:seek(optional where, optional offset)`: 设置和获取当前文件位置,成功则返回最终的文件位置(按字节),失败则返回nil加错误信息。
+- `file:seek(optional where, optional offset)`: 设置和获取当前文件位置,成功则返回最终的文件位置(按字节),失败则返回nil加错误信息。  
 
 参数 where 值可以是:
 ``` lua
