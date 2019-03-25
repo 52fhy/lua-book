@@ -24,6 +24,13 @@ Lua I/O 库用于读取和处理文件。分为简单模式（和C一样）、�
 - `io.output(file)`: 设置默认输出文件为file
 - `io.write(content)`: 在文件最后一行添加content内容
 - `io.read()`:  读取文件的一行
+参数可以是下表中的一个：
+``` lua
+"*n"	读取一个数字并返回它。例：file.read("*n")
+"*a"	从当前位置读取整个文件。例：file.read("*a")
+"*l"（默认）	读取下一行，在文件尾 (EOF) 处返回 nil。例：file.read("*l")
+number	返回一个指定字符个数的字符串，或在 EOF 时返回 nil。例：file.read(5)
+```
 - `io.close(file)`: 关闭打开的文件file
 - `io.tmpfile()`: 返回一个临时文件句柄，该文件以更新模式打开，程序结束时自动删除
 - `io.type(file)`: 检测obj是否一个可用的文件句柄
@@ -89,3 +96,37 @@ hahah
 ```
 
 ## 完全模式
+
+简单模式由`file`模块提供，主要有：
+
+- `file:write(content)`: 在文件最后一行添加content内容
+- `file:read()`:  读取文件的一行
+- `file:close()`: 关闭打开的文件
+- `file:seek(optional where, optional offset)`: 设置和获取当前文件位置,成功则返回最终的文件位置(按字节),失败则返回nil加错误信息。
+
+参数 where 值可以是:
+``` lua
+"set": 从文件头开始
+"cur": 从当前位置开始[默认]
+"end": 从文件尾开始
+offset:默认为0
+```
+- `file:flush()`: 向文件写入缓冲中的所有数据
+
+示例：
+``` lua
+-- read
+-- src/file_read.lua
+
+local file = io.open("test_file.txt", 'r')
+
+file:seek("end", -5) -- 定位到文件倒数第 5 个位置
+print(file:read("*a")) -- 从当前位置读取整个文件
+
+file:close()  -- 关闭打开的文件
+```
+输出：
+```
+$ luajit src/file_read.lua
+hahah
+```
