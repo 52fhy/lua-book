@@ -10,8 +10,8 @@ ngx_lua 指的是 [`lua-nginx-module`](https://github.com/openresty/lua-nginx-mo
 
 `OpenResty` 就是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。OpenResty 基于`Nginx`开发，可以简单认为是 `Nginx` + `lua-nginx-module`的组合版。
 
-官网：https://openresty.org/cn/
-官方文档：https://github.com/openresty/lua-nginx-module
+官网：https://openresty.org/cn/  
+官方文档：https://github.com/openresty/lua-nginx-module  
 
 ## ## Hello World 
 
@@ -89,11 +89,11 @@ curl http://127.0.0.1:8080/hello
 说明成功运行了。
 
 ## 参考
-1、OpenResty® - 中文官方站
+1、OpenResty® - 中文官方站  
 https://openresty.org/cn/  
-2、openresty/lua-nginx-module: Embed the Power of Lua into NGINX HTTP servers
+2、openresty/lua-nginx-module: Embed the Power of Lua into NGINX HTTP servers  
 https://github.com/openresty/lua-nginx-module#version  
-3、环境搭建 · OpenResty最佳实践
+3、环境搭建 · OpenResty最佳实践  
 https://moonbingbing.gitbooks.io/openresty-best-practices/content/openresty/install.html  
 
 
