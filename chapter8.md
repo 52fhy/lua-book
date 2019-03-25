@@ -113,6 +113,8 @@ offset:默认为0
 ```
 - `file:flush()`: 向文件写入缓冲中的所有数据
 
+其中 `file` 为 `io.open()` 返回的文件句柄。
+
 示例：
 ``` lua
 -- read
