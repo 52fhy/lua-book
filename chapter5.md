@@ -13,7 +13,7 @@
 函数定义格式：
 ``` lua
 function function_name (arc) -- arc 表示参数列表，函数的参数列表可以为空
-	-- nody
+	-- body
 end
 ```
 支持使用`local`定义为局部作用域的函数。  

@@ -79,7 +79,7 @@ print(type(7.8263692594256e-06))
 ## string
 
 字符串由一对双引号或单引号来表示:
-```
+``` lua
 string1 = "this is string1\n"
 string2 = 'this is string2\n'
 print(string1)
@@ -157,8 +157,8 @@ local tmp = {
 	[10] = 11, -- 相当于[10] = 11，此时索引为数字
 }
 
-print(tmp.name)
-print(tmp["name3"])
+print(tmp.name)  -- 等同于 print(tmp["name"])
+print(tmp["name3"])  -- 等同于 print(tmp.name3)
 print(tmp.year)
 print(tmp.pi)
 print(tmp.lang[1])
@@ -181,7 +181,7 @@ c
 也可以先创建一个空表，再添加数据：
 ``` lua
 a = {}
-a["key"] = "value"
+a.key = "value"
 ```
 
 
