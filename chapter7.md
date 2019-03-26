@@ -26,6 +26,9 @@
 - `string.match(str, pattern, init)` 
 寻找源字串str中的第一个配对. 参数init可选, 指定搜寻过程的起点, 默认为1。 在成功配对时, 函数将返回配对表达式中的所有捕获结果; 如果没有设置捕获标记, 则返回整个配对字符串. 当没有成功的配对时, 返回nil。
 
+
+> 注：`string.match()`、`string.gmatch()` 目前并不能被 JIT 编译，OpenResty 里应尽量使用 `ngx_lua` 模块提供的 `ngx.re.match` 等API。
+
 ## Table 库
 
 - `table.concat (table [, sep [, start [, end]]])`
